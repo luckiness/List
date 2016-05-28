@@ -1,7 +1,7 @@
 
 #include"list.h"
 #include<assert.h>
-//1<<Êä³öÔËËã·ûµÄÖØÔØ
+//1<<è¾“å‡ºè¿ç®—ç¬¦çš„é‡è½½
 ostream& operator<<(ostream &os,Slist &s)
  {
 	 if(s._head==NULL)
@@ -17,7 +17,7 @@ ostream& operator<<(ostream &os,Slist &s)
 		os<<"over"<<endl;
 		return os;
  }
-//2Í·²å·¨½¨Á¢µ¥Á´±í
+//2å¤´æ’æ³•å»ºç«‹å•é“¾è¡¨
  void Slist::pushback(const DataType &d)
  {
  Node * newNode=new Node(d);
@@ -32,16 +32,16 @@ ostream& operator<<(ostream &os,Slist &s)
 	 _tail=newNode;
 	 }
  }
- //3Î²É¾³ı·¨µ¥Á´±í
+ //3å°¾åˆ é™¤æ³•å•é“¾è¡¨
 	 void  Slist::popback()
 	{
 		Node *cur=_head;
-		//Ã»ÓĞ½Úµã
+		//æ²¡æœ‰èŠ‚ç‚¹
 		if(_head=NULL)
 		{
 			return;
 		}
-		//ÓĞÒ»¸ö½Úµã
+		//æœ‰ä¸€ä¸ªèŠ‚ç‚¹
 		if(_head==_tail)
 		{
 		delete _head;
@@ -49,7 +49,7 @@ ostream& operator<<(ostream &os,Slist &s)
 		_tail=NULL;
 		return;
 		}
-		//ÓĞºÃ¶à¸ö½Úµã
+		//æœ‰å¥½å¤šä¸ªèŠ‚ç‚¹
 		while(cur->_next!=_tail)
 		{
 		cur=cur->_next;
@@ -58,7 +58,7 @@ ostream& operator<<(ostream &os,Slist &s)
 		_tail=cur;
 		_tail->_next=NULL;
 	}
-//3Í·²å·¨½¨Á¢µ¥Á´±í
+//3å¤´æ’æ³•å»ºç«‹å•é“¾è¡¨
 	 void  Slist::pushfront(const DataType &d)
 	 {
      Node* newNode=new Node(d);
@@ -73,20 +73,20 @@ ostream& operator<<(ostream &os,Slist &s)
 		 _head=newNode;
 		 }
 	 }
-//4Í·É¾
+//4å¤´åˆ 
 	 void  Slist::popfront()
 	 {
-		 //Èç¹ûÁ´±íÎª¿ÕÔòÖ±½Ó·µ»Ø
+		 //å¦‚æœé“¾è¡¨ä¸ºç©ºåˆ™ç›´æ¥è¿”å›
 		 if(_head==NULL)
 		 {
 		   return;
 		 }
-		 //·ñÔò°¤¸öÉ¾³ı
+		 //å¦åˆ™æŒ¨ä¸ªåˆ é™¤
 		 Node *del=_head;
 		 _head=_head->_next;
 		 delete del;
 	 }
-//5ÔÚµ¥Á´±íÖĞ²éÕÒÄ³¸öÊı¾İµÄ½Úµã
+//5åœ¨å•é“¾è¡¨ä¸­æŸ¥æ‰¾æŸä¸ªæ•°æ®çš„èŠ‚ç‚¹
 	 Node*  Slist::Find(const DataType &d)
 	 {
 		 Node *cur=_head;
@@ -104,7 +104,7 @@ ostream& operator<<(ostream &os,Slist &s)
 		 }
 	     return NULL;
 	 }
-	// 6ÔÚµ±Ç°½Úµãºó±ß²åÈëÄ³¸öÊı¾İ
+	// 6åœ¨å½“å‰èŠ‚ç‚¹åè¾¹æ’å…¥æŸä¸ªæ•°æ®
 	 void  Slist::Insert(Node* pos,const DataType &d)
 	 {
 	 Node* newNode=new Node(d);
@@ -119,7 +119,7 @@ ostream& operator<<(ostream &os,Slist &s)
 	  pos->_next=newNode;
 	 }	
 	 }
-	 //7·­×ªµ¥Á´±í
+	 //7ç¿»è½¬å•é“¾è¡¨
 	 void Slist::Reverse()
 	 {
 		 Node *th=NULL;
@@ -138,7 +138,7 @@ ostream& operator<<(ostream &os,Slist &s)
 		}
 		_head=th;
 	 }
-//8¶Ôµ¥Á´±í½øĞĞÅÅĞò
+//8å¯¹å•é“¾è¡¨è¿›è¡Œæ’åº
  void Slist:: sort()
 	 {
 		 Node* end=NULL;
@@ -163,7 +163,7 @@ ostream& operator<<(ostream &os,Slist &s)
 		 cur=_head;
 	 }
 	 }
-//9ºÏ²¢Á½¸öÓĞĞòµ¥Á´±í
+//9åˆå¹¶ä¸¤ä¸ªæœ‰åºå•é“¾è¡¨
 	 Node* Merge(Node* _head1,Node* _head2)
 	 {
 	   Node *newHead=NULL;
@@ -215,24 +215,24 @@ ostream& operator<<(ostream &os,Slist &s)
 	 return newHead;
 	 }
 
-	//10É¾³ıÁ´±íÖĞµÄÄ³¸öÖµÎªdµÄ½Úµã
+	//10åˆ é™¤é“¾è¡¨ä¸­çš„æŸä¸ªå€¼ä¸ºdçš„èŠ‚ç‚¹
 	 void  Slist::Remove(const DataType &d)
 	 {
 		 Node *cur=_head;
 		 Node * del=NULL;
 		 Node *prve=NULL;
 		 if(cur==NULL)
-		 {//ÈôÁ´±íÎª¿ÕÔòÖ±½Ó·µ»Ø
+		 {//è‹¥é“¾è¡¨ä¸ºç©ºåˆ™ç›´æ¥è¿”å›
 		  return;
 		 }
-		 //Èôcur²»Îª¿Õ ÔòÒ»Ö±ÍùÏÂ×ß
+		 //è‹¥curä¸ä¸ºç©º åˆ™ä¸€ç›´å¾€ä¸‹èµ°
 		 while(cur)
 		 {
 		 
 			 if(cur->_data==d)
 			 {
 				del=cur;
-				//ÈôÒªÕÒµÄÎªµÚÒ»¸ö½Úµã
+				//è‹¥è¦æ‰¾çš„ä¸ºç¬¬ä¸€ä¸ªèŠ‚ç‚¹
 				 if(cur=_head)
 				 {
 				 _head=_head->_next;
@@ -248,24 +248,24 @@ ostream& operator<<(ostream &os,Slist &s)
 			 cur=cur->_next;
 		 }
 	 }
-	 //11É¾³ıÁ´±íÖĞµÄËùÓĞÖµÎªdµÄ½Úµã
+	 //11åˆ é™¤é“¾è¡¨ä¸­çš„æ‰€æœ‰å€¼ä¸ºdçš„èŠ‚ç‚¹
 	 void  Slist::RemoveAll(const DataType &d)
 	 {
 	  Node *cur=_head;
 		 Node * del=NULL;
 		 Node *prve=NULL;
 		 if(cur==NULL)
-		 {//ÈôÁ´±íÎª¿ÕÔòÖ±½Ó·µ»Ø
+		 {//è‹¥é“¾è¡¨ä¸ºç©ºåˆ™ç›´æ¥è¿”å›
 		  return;
 		 }
-		 //Èôcur²»Îª¿Õ ÔòÒ»Ö±ÍùÏÂ×ß
+		 //è‹¥curä¸ä¸ºç©º åˆ™ä¸€ç›´å¾€ä¸‹èµ°
 		 while(cur)
 		 {
 		
 			 if(cur->_data==d)
 			 {
 				del=cur;
-				 //ÈôÒªÕÒµÄÎªµÚÒ»¸ö½Úµã
+				 //è‹¥è¦æ‰¾çš„ä¸ºç¬¬ä¸€ä¸ªèŠ‚ç‚¹
 				 if(cur=_head)
 				 {
 				 _head=_head->_next;
@@ -287,7 +287,7 @@ ostream& operator<<(ostream &os,Slist &s)
 		 }
 	 }
 
-//12É¾³ıÁ´±íÖĞµ¹ÊıµÚk¸ö½Úµã
+//12åˆ é™¤é“¾è¡¨ä¸­å€’æ•°ç¬¬kä¸ªèŠ‚ç‚¹
 	 void Slist::Delk(int k)
 	 {
 		 assert(k>1);
@@ -307,7 +307,7 @@ ostream& operator<<(ostream &os,Slist &s)
 		 p2->_next=p2->_next->_next;
 		 delete del;
 	 }
-//13ÔÚµ±Ç°Á´±íÇ°²åÈëÒ»¸öÊı¾İ
+//13åœ¨å½“å‰é“¾è¡¨å‰æ’å…¥ä¸€ä¸ªæ•°æ®
 	 void Slist::InsertFrontNode(Node* pos,const DataType &d)
 	 {
 	 Node * newNode=new Node(d);
@@ -318,7 +318,7 @@ ostream& operator<<(ostream &os,Slist &s)
 	 pos->_next->_data=tmp;
 	 }
 
-	 //14Ñ°ÕÒÁ´±íµÄÖĞ¼ä½Úµã
+	 //14å¯»æ‰¾é“¾è¡¨çš„ä¸­é—´èŠ‚ç‚¹
 	 Node* Slist:: FindMidNode()
 	 {
 	   Node *fast=_head;
@@ -334,7 +334,7 @@ ostream& operator<<(ostream &os,Slist &s)
 	   }
 	     return slow;
 	 }
-	//15ÇóÁ´±íµÄ³¤¶È
+	//15æ±‚é“¾è¡¨çš„é•¿åº¦
 	int  Slist:: GetlistLength()
 	 {
 		 int count=0;
@@ -391,6 +391,7 @@ ostream& operator<<(ostream &os,Slist &s)
 	  meet=meet->_next;
 	  
 	  }
+	  
 	  return entry;
 	}
 	
