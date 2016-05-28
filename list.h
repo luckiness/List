@@ -19,7 +19,7 @@ typedef int DataType;
  {
 	 friend ostream & operator<<(ostream &os,Slist &s);
  public:
-	 //¹¹ÔìÁ´±í
+	 //æž„é€ é“¾è¡¨
 	 Slist()
 		 :_head(NULL)
 		 ,_tail(NULL)
@@ -60,29 +60,31 @@ typedef int DataType;
 	 void popback();
 	 void pushfront(const DataType &d);
 	 void popfront();
-	 //Ñ°ÕÒÁ´±íÖÐÄ³¸ö½Úµã
+	 //å¯»æ‰¾é“¾è¡¨ä¸­æŸä¸ªèŠ‚ç‚¹
 	 Node *Find(const DataType &d);
 	 void Insert(Node* pos,const DataType &d);
 	 void Reverse();
 	 void sort();
-	 //ºÏ²¢Á½¸öÓÐÐòµ¥Á´±í¡£¡£ÓÐÒ»µãÎÊÌâ
+	 //åˆå¹¶ä¸¤ä¸ªæœ‰åºå•é“¾è¡¨ã€‚ã€‚æœ‰ä¸€ç‚¹é—®é¢˜
 	 Node* Merge(Slist slist1,Slist slist2);
 	 void Remove(const DataType &d);
 	 void RemoveAll(const DataType &d);
-	 //É¾³ýÁ´±íÖÐµ¹ÊýµÚk¸ö½Úµã
+	 //åˆ é™¤é“¾è¡¨ä¸­å€’æ•°ç¬¬kä¸ªèŠ‚ç‚¹
 	 void Delk(int k);
-	 //ÔÚÖ¸¶¨½Úµãºó±ß²åÈëÒ»¸ö½Úµã
+	 //åœ¨æŒ‡å®šèŠ‚ç‚¹åŽè¾¹æ’å…¥ä¸€ä¸ªèŠ‚ç‚¹
 	 void InsertFrontNode(Node* pos,const DataType &d);
-	 //Ñ°ÕÒÁ´±íµÄÖÐ¼ä½Úµã
+	 //å¯»æ‰¾é“¾è¡¨çš„ä¸­é—´èŠ‚ç‚¹
 	 Node* FindMidNode();
-	//ÇóÁ´±íµÄ³¤¶È
+	//æ±‚é“¾è¡¨çš„é•¿åº¦
 	 int GetlistLength();
-	 //Ïú»ÙÁ´±í
+	 //é”€æ¯é“¾è¡¨
 	 void Destory();
-	//ÅÐ¶ÏÁ´±íÊÇ·ñ´ø»·
+	//åˆ¤æ–­é“¾è¡¨æ˜¯å¦å¸¦çŽ¯
 	 Node* Checkcycle();
-	 //»ñÈ¡»·µÄÈë¿Ú½Úµã
+	 //èŽ·å–çŽ¯çš„å…¥å£èŠ‚ç‚¹
 	 Node* GetcycleEntryNode(Node* meetnode);
+	 
+	 
  private:
 	 Node *_head;
 	 Node *_tail;
